@@ -6,20 +6,21 @@ Added form with text, select, checkbox, radio, textarea
 <html lang="en">
     <head>
         <title>Contact Information</title>
+        <!--Linking External Style Sheet-->
+        <link href="styles/teststyles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <header>
             <h1>Contact Information</h1>
         </header>
 
-        <nav>
-            <hr />
+        <nav class="border" style="text-align: center"> <!--Internal Links with inline styling and class selector-->
+            <hr style="border: thin dotted red;" />
             <p><strong>Pages</strong></p>
-            <p><a href="index.html">Home</a></p>
-            <p><a href="projects.html">Projects</a></p>
-            <p><a href="testimonials.html">Testimonials</a></p>
-            <hr />
-            <a href="index.html"><img src="images/selfportrait.jpg" alt="Photo of me, Narish" width="400"/></a>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="testimonials.html">Testimonials</a>
+            <hr style="width: 50%; border: 2px solid blueviolet"/>
         </nav>
 
         <h2>Information Request</h2>
@@ -59,7 +60,7 @@ Added form with text, select, checkbox, radio, textarea
                 <label for="fullStack">Full Stack Development</label>
             </fieldset>
             <br/>
-            
+
             <!--Radio-->
             <label for="completed"></label>
             <fieldset>
@@ -69,7 +70,7 @@ Added form with text, select, checkbox, radio, textarea
                 <input type="radio" id="choice2" name="questionnaire" value="no">
                 <label for="choice2">No</label><br/>
             </fieldset>
-            
+
             <!--Textarea-->
             <label for="comments">Additional Comments></label><br/>
             <textarea id="comments" name="comments"></textarea>

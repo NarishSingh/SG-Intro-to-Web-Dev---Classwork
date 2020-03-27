@@ -1,0 +1,39 @@
+/*
+External Style Sheet
+Style rules copied from index.html
+*/
+/* 
+    Created on : Mar 27, 2020, 11:38:54 AM
+    Author     : Narish
+*/
+
+/*Tag Selectors*/
+body
+{
+    background-color: lightblue;
+}
+
+/*If the same element is done twice, the last one written will have precdence*/
+header
+{
+    background-color: darkgrey;
+}
+
+header, footer
+{
+    background-color: darkgreen;
+    /*background-color: indianred;*/
+    color: white;
+}
+
+/*Class Selectors*/
+.border
+{
+    border: thick solid blue;
+}
+
+/*ID Selectors*/
+#past-experience
+{
+    border: thick dashed orange;
+}

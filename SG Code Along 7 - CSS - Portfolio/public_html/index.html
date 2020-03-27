@@ -2,6 +2,8 @@
 <!--
 SG Code Along 7 - CSS - Portfolio
 Added inline elements
+Added internal style sheet in index.html
+Added external style sheet and linked to all .html pages
 
 Name: Narish
 Date Created: 3/27/20
@@ -10,29 +12,32 @@ Last Revision: 3/27/20
 <html lang="en">
     <head>
         <title>SG Code Along 7 - CSS - Portfolio</title>
+
+        <!--Linking External Style Sheet-->
+        <link href="styles/teststyles.css" rel="stylesheet" type="text/css" />
+
         <!--Internal Style Sheet-->
         <style>
-            /*Tag Selectors*/
+            /*
             body
             {
                 background-color: lightblue;
             }
             header, footer
             {
-                /*background-color: darkgreen;*/
+                background-color: darkgreen;
                 background-color: indianred;
                 color: white;
             }
-            /*Class Selectors*/
             .border
             {
                 border: thick solid blue;
             }
-            /*ID Selectors*/
             #past-experience
             {
                 border: thick dashed orange;
             }
+            */
         </style>
     </head>
     <body>
@@ -41,12 +46,12 @@ Last Revision: 3/27/20
                 <h1>Portfolio for Narish</h1>
             </header>
 
-            <nav class="border"> <!--Internal Links with inline styling and class selector-->
+            <nav class="border" style="text-align: center"> <!--Internal Links with inline styling and class selector-->
                 <hr style="border: thin dotted red;" />
                 <p><strong>Pages</strong></p>
-                <p><a href="projects.html">Projects</a></p>
-                <p><a href="contact.html">Contact Information</a></p>
-                <p><a href="testimonials.html">Testimonials</a></p>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact Information</a>
+                <a href="testimonials.html">Testimonials</a>
                 <hr style="width: 50%; border: 2px solid blueviolet"/>
             </nav>
 
@@ -108,7 +113,8 @@ Last Revision: 3/27/20
                     </ul>
                 </article>
 
-                <footer>
+                <!--Inline styles take precedence over all-->
+                <footer style="background-color: fuchsia;">
                     <hr />
                     <p>&copy; 2020 Narish Singh. All rights reserved.</p> <!--HTML code always begins w & and ends w ;, here this is the copyright c-->
                 </footer>

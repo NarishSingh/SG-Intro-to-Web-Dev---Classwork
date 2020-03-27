@@ -5,20 +5,21 @@ Testimonials about me/my work
 <html lang="en">
     <head>
         <title>Testimonials</title>
+        <!--Linking External Style Sheet-->
+        <link href="styles/teststyles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <header>
             <h1>Testimonials</h1>
         </header>
 
-        <nav>
-            <hr />
+        <nav class="border" style="text-align: center"> <!--Internal Links with inline styling and class selector-->
+            <hr style="border: thin dotted red;" />
             <p><strong>Pages</strong></p>
-            <p><a href="index.html">Home</a></p>
-            <p><a href="projects.html">Projects</a></p>
-            <p><a href="contact.html">Contact Information</a></p>
-            <hr />
-            <a href="index.html"><img src="images/selfportrait.jpg" alt="Photo of me, Narish" width="400"/></a>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact Information</a>
+            <hr style="width: 50%; border: 2px solid blueviolet"/>
         </nav>
 
         <footer>
