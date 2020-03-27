@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!--
 SG Code Along 7 - CSS - Portfolio
+Added inline elements
 
 Name: Narish
 Date Created: 3/27/20
@@ -9,6 +10,30 @@ Last Revision: 3/27/20
 <html lang="en">
     <head>
         <title>SG Code Along 7 - CSS - Portfolio</title>
+        <!--Internal Style Sheet-->
+        <style>
+            /*Tag Selectors*/
+            body
+            {
+                background-color: lightblue;
+            }
+            header, footer
+            {
+                /*background-color: darkgreen;*/
+                background-color: indianred;
+                color: white;
+            }
+            /*Class Selectors*/
+            .border
+            {
+                border: thick solid blue;
+            }
+            /*ID Selectors*/
+            #past-experience
+            {
+                border: thick dashed orange;
+            }
+        </style>
     </head>
     <body>
         <main>
@@ -16,13 +41,13 @@ Last Revision: 3/27/20
                 <h1>Portfolio for Narish</h1>
             </header>
 
-            <nav> <!--Internal Links-->
-                <hr />
+            <nav class="border"> <!--Internal Links with inline styling and class selector-->
+                <hr style="border: thin dotted red;" />
                 <p><strong>Pages</strong></p>
                 <p><a href="projects.html">Projects</a></p>
                 <p><a href="contact.html">Contact Information</a></p>
                 <p><a href="testimonials.html">Testimonials</a></p>
-                <hr />
+                <hr style="width: 50%; border: 2px solid blueviolet"/>
             </nav>
 
             <section>
@@ -33,7 +58,8 @@ Last Revision: 3/27/20
                     <p><a href="#hobbies">3. Hobbies</a></p>
                 </nav>
 
-                <article id="about-me">
+                <!--Class Selector-->
+                <article class="border" id="about-me">
                     <h2><em>About Me</em></h2>
                     <figure><img src="images/selfportrait.jpg" alt="Photo of me, Narish" width="400"/></figure>
                     <p>My name is <strong>Narish Singh</strong>, I am a student of TechHire Open Code at LAGCC. I was formerly a pre-med student</p>
