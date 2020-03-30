@@ -1,0 +1,28 @@
+/* 
+    Created on : Mar 27, 2020, 12:30:10 PM
+    Author     : naris
+*/
+
+#outside 
+{
+    border: thin black solid;
+    width: 400px;
+    height: 200px;
+
+    /*top, right, bottom, and left*/
+    padding: 5px;
+    /*padding: 20px 10px 5px 0px;*/  
+
+    background-color: #800d14;
+    margin-left: 50px;
+    margin-top: 50px
+}
+
+#inside 
+{      
+    border: thick orange dotted; /*properties declared in one line*/
+    padding: 20px 10px 5px 0px;  
+    text-align: center;
+    font-size: 2em;
+    background-color: white;
+}
