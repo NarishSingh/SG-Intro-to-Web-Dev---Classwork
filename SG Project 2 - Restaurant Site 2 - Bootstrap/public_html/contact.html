@@ -23,35 +23,54 @@ Contact Us
                 <a class="btn badge-pill" href="menu.html">Menu</a>
             </nav>
 
-            <section>
-                <article>
-                    <h3>Contact Us</h3>
-                </article>
+            <article>
+                <h3>Contact Us</h3>
+            </article>
 
-                <form action="submit.html" method="POST">
-                    <!--Text Inputs-->
+
+            <form action="submit.html" method="POST">
+                <!--Text Inputs-->
+                <div class="d-flex p-2 justify-content-center">
                     <label for="name">Name:</label>
+                </div>
+                <div class="d-flex p-2 justify-content-center">
                     <br/><input type="text" id="name" required/><br/>
                     <p></p>
+                </div>
 
+                <div class="d-flex p-2 justify-content-center">
                     <label for="email">E-mail:</label>
+                </div>
+                <div class="d-flex p-2 justify-content-center">
                     <br/><input type="text" id="email" required/><br/>
                     <p></p>
+                </div>
 
+                <div class="d-flex p-2 justify-content-center">
                     <label for="phone">Phone Number:</label>
+                </div>
+                <div class="d-flex p-2 justify-content-center">
                     <br/><input type="text" id="phone" required/><br/>
                     <p></p>
+                </div>
 
-                    <!--Select/Drop Down Menus-->
+                <!--Select/Drop Down Menus-->
+                <div class="d-flex p-2 justify-content-center">
                     <label for="inquiry">Reasons for Contacting</label><br/>
+                </div>
+                <div class="d-flex p-2 justify-content-center">
                     <select>
                         <option value="catering" selected>Catering</option>
                         <option value="feedback">Feedback</option>
                         <option value="other">Other</option>
                     </select>
+                </div>
 
-                    <br/>
+                <br/>
+                <div class="d-flex p-2 justify-content-center">
                     <label for="cater">Catering Type:</label><br/>
+                </div>
+                <div class="d-flex p-2 justify-content-center">
                     <select>
                         <option value="weddingHall">Wedding - Hall</option>
                         <option value="weddingChurch">Wedding - Church</option>
@@ -59,22 +78,30 @@ Contact Us
                         <option value="jhandi">Jhandi or other Religious Function</option>
                         <option value="na" selected>--Not Applicable--</option>
                     </select>
+                </div>
 
-                    <!--Textarea-->
-                    <br/><br/>
+                <!--Textarea-->
+                <br/><br/>
+                <div class="d-flex p-2 justify-content-center">
                     <label for="comments">Feedback and Additional Comments</label><br/>
+                </div>
+                <div class="d-flex p-2 justify-content-center">
                     <textarea id="comments" name="comments"></textarea>
+                </div>
 
-                    <!--Radio Buttons-->
+                <!--Radio Buttons-->
+                <div class="d-flex p-2 justify-content-center">
                     <fieldset>
-                        <legend>Have you ever eaten here before or ordered food from us?</legend>
+                        <legend>Have you ever eaten with us before?</legend>
                         <input type="radio" id="choice1" name="everBeen" value="y">
                         <label for="choice1">Yes</label><br/>
                         <input type="radio" id="choice2" name="everBeen" value="n">
                         <label for="choice2">No</label><br/>
                     </fieldset>
+                </div>
 
-                    <!--Checkbox-->
+                <!--Checkbox-->
+                <div class="d-flex p-2 justify-content-center">
                     <fieldset>
                         <legend>Best days to reach out:</legend>
                         <input type="checkbox" id="m" name="contactDay" value="M">
@@ -88,13 +115,16 @@ Contact Us
                         <input type="checkbox" id="f" name="contactDay" value="F">
                         <label for="f">F</label>
                     </fieldset>
+                </div>
 
-                    <!--Form Action Buttons-->
-                    <br/>
+                <!--Form Action Buttons-->
+                <br/>
+                <div class="d-flex p-2 justify-content-center">
                     <input type="submit"/>
                     <input type="reset"/>
-                </form>
-            </section>
+                </div>
+            </form>
+
 
             <footer>
                 <hr />
