@@ -14,7 +14,7 @@ function countingChars(stringToCount)
 
 countingChars("cake");
 
-var portalString="The cake is a lie";
+var portalString = "The cake is a lie";
 countingChars(portalString);
 
 /** countingChars2(stringToCount, charToFind)
@@ -25,16 +25,16 @@ countingChars(portalString);
  */
 function countingChars2(stringToCount, charToFind)
 {
-    var charCt=0;
-    
-    for (var i = 0; i < stringToCount.length; i++) 
+    var charCt = 0;
+
+    for (var i = 0; i < stringToCount.length; i++)
     {
-        if(stringToCount[i]===charToFind)
+        if (stringToCount[i] === charToFind)
         {
             charCt++;
         }
     }
-    
+
     console.log("String to search in: " + stringToCount);
     console.log("Char to find: " + charToFind);
     console.log("Number of times the char appears: " + charCt);
@@ -51,25 +51,26 @@ countingChars2("xxaxxxbxx", "x");
  */
 function countingChars3(str, search)
 {
-    var ct=0;
-    var numChars=search.length;
-    
-    var lastIndex=str.lenght-numChars; //need to stop loop based on multiple chars
-    
-    for (var i = 0; i <= lastIndex; i++) 
+    var ct = 0;
+    var numChars = search.length;
+
+    var lastIndex = str.length - numChars; //need to stop loop based on multiple chars
+
+    for (var i = 0; i <= lastIndex; i++)
     {
-        var current=str.substring(i, i+numChars);
-        if (current==search) 
+        var current = str.substring(i, i + numChars);
+        if (current == search)
         {
             ct++;
         }
     }
-    
+
 //    console.log("String to search: ", + str);
 //    console.log("Char to find: ", + search);
 //    console.log("Number of times the char appears: ", + ct);
     return ct;
 }
 
-countingChars3("xxaxxxbxx", "xx");
+//countingChars3("xxaxxxbxx", "xx");
+console.log(countingChars3("xxaxxxbxx", "xx"));
 
