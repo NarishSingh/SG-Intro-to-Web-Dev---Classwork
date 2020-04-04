@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+SG Code Along 25 - Mouse Events
+-->
+<html>
+    <head>
+        <title>Code Along: Display a Mouse Position</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Code Along: Display Mouse Position</h1>
+            <fieldset>
+                <div>
+                    <label>X:<span id="mouseX">Untracked</span></label>
+                </div>
+                <div>
+                    <label>Y:<span id="mouseY">Untracked</span></label>
+                </div>
+            </fieldset>
+
+            <div>
+                <button id="btnToggle" class="btn btn-success">Start Mouse Tracking</button>
+            </div>
+        </div>
+
+        <script src="displayMousePosition.js"></script>
+    </body>
+</html>
