@@ -37,7 +37,9 @@ function remAnim()
 }
 
 /* GAMEPLAY */
-let gamePlay=false;
+let gamePlay=false; //might not be needed...
+let winCount=0;
+let lossCount=0;
 
 /** winningRoll()
  * Randomize the player goal
@@ -56,4 +58,3 @@ function winningRoll()
     return rollTo;
 }
 
-let rollToWin=winningRoll();

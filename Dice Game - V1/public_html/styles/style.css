@@ -1,16 +1,16 @@
-.container
+#diceRoll
 {
     width: auto;
     height: fit-content;
     background-color: grey;
 }
 
-.innerContainer #title
+#title
 {
     justify-content: center;
 }
 
-.innerContainer
+.container
 {
     display: grid;
     justify-content: center;
