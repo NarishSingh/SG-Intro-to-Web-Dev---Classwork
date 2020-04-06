@@ -39,7 +39,7 @@ function remAnim()
 /* GAMEPLAY */
 let gamePlay=false; //might not be needed...
 let winCount=0;
-let lossCount=0;
+let lossCount=0; //might not need
 
 /** winningRoll()
  * Randomize the player goal
@@ -58,3 +58,17 @@ function winningRoll()
     return rollTo;
 }
 
+let userRoll;
+let rollToWin=winningRoll();
+
+//loop
+while(userRoll != rollToWin)
+{
+    
+    if(userRoll === rollToWin)
+    {
+//        You win
+        winCount++;
+        break;
+    }
+}
