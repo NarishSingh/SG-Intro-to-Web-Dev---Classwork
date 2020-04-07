@@ -13,10 +13,11 @@ button.addEventListener("click", anim);
 function anim()
 {
     //randomizer for dice rolls
-    let num1 = Math.floor(Math.random()*6+1);
-    let num2 = Math.floor(Math.random()*6+1);
-    userRoll=num1+num2;
-    
+    let num1 = Math.floor(Math.random() * 6 + 1);
+    let num2 = Math.floor(Math.random() * 6 + 1);
+    userRoll = num1 + num2;
+    rollCount++;
+
     //display and animate
     //dice 1
     dice1.classList.add('animated', 'flipOutX', 'faster');
@@ -39,9 +40,9 @@ function remAnim()
 }
 
 /* GAMEPLAY */
-let gamePlay=false; //might not be needed...
-let winCount=0;
-let lossCount=0;
+let gamePlay = false; //might not be needed...
+let winCount = 0;
+let lossCount = 0;
 
 //Display the player's goal
 /** winningRoll()
@@ -50,45 +51,44 @@ let lossCount=0;
  */
 function winningRoll()
 {
-    let rollTo=Math.floor(Math.random()*12+1);
-    
+    let rollTo = Math.floor(Math.random() * 12 + 1);
+
     //2 Dice cannot reach a total of 1, set to 2
-    if(rollTo===1)
+    if (rollTo === 1)
     {
         rollTo++;
     }
-    
+
     return rollTo;
 }
 
-let rollToWin=winningRoll(); //how comp tracks the round goal for rolling
-let win=document.getElementById("winningRoll");
-win.innerText=rollToWin;
+let rollToWin = winningRoll(); //how comp tracks the round goal for rolling
+let win = document.getElementById("winningRoll");
+win.innerText = rollToWin;
 
 //Rules
 //if = rollToWin, they win
-const userRollLimit=10; //if past limit, they lose -> do an alert on loss
-let rollCount=0;
+const userRollLimit = 10; //if past limit, they lose -> do an alert on loss
+let rollCount = 0;
 
-//loop gets triggered by a button???
 //main gameplay loop
-while(userRoll !== rollToWin)
+if (rollCount < userRollLimit && userRoll === rollToWin)
 {
-    rollCount++;
+    alert("You win!!!");
+    winCount++;
+
+} 
+else if (rollCount < userRollLimit)
+{
     
-    //win
-    if(userRoll === rollToWin)
-    {
-//        You win
-        winCount++;
-        break;
-    }
-    
-    //loss
-    if(rollCount>userRollLimit)
-    {
-//        you lose
-        lossCount++;
-        break;
-    }
 }
+else
+{
+    //loss
+    alert("You lose!!!");
+    lossCount++;
+
+}
+
+
+//display win/loss count --> HTML

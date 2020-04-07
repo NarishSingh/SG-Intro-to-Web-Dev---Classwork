@@ -10,6 +10,16 @@
     justify-content: center;
 }
 
+#button
+{
+    margin:20px; /*look how to directly center it*/
+}
+
+#diceRoll
+{
+    padding: 40px 50px;
+}
+
 .container
 {
     display: grid;
