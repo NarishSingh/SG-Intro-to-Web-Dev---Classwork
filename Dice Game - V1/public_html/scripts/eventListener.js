@@ -93,6 +93,10 @@ function winningRoll()
     return rollTo;
 }
 
+/** displayGoal()
+ * Randomize the winning goal and display on page
+ * @returns {undefined}
+ */
 function displayGoal()
 {
     rollToWin = winningRoll(); //how comp tracks the round goal for rolling
@@ -120,17 +124,14 @@ function restartGame()
 {
     gamePlay = false;
     rollCount = 0;
-    console.log(rollToWin); //debug
     displayGoal();
 }
 
 newGame.addEventListener("click", restartGame);
 button.addEventListener("click", gameStart);
 
-
 do
 {
-    displayGoal();
     button.addEventListener("click", anim);
 } while (gamePlay)
 
