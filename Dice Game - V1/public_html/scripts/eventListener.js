@@ -41,6 +41,7 @@ let gamePlay=false; //might not be needed...
 let winCount=0;
 let lossCount=0; //might not need
 
+//Display the player's goal
 /** winningRoll()
  * Randomize the player goal
  * @returns {Number} 2-12 for 2 dice
@@ -58,12 +59,18 @@ function winningRoll()
     return rollTo;
 }
 
-let userRoll;
-let rollToWin=winningRoll();
+let rollToWin=winningRoll(); //how comp tracks the round goal for rolling
+let win=document.getElementById("winningRoll");
+win.innerText=rollToWin;
 
-//loop
+let userRoll;
+
+//loop gets triggered by a button???
+/*
 while(userRoll != rollToWin)
 {
+    
+    
     
     if(userRoll === rollToWin)
     {
@@ -72,3 +79,4 @@ while(userRoll != rollToWin)
         break;
     }
 }
+ * */

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <!--
 Dice Game V1
-
+-connections (doc.get) between the gameplay and page
+-connections between stats and page
+-gameplay itself (variables to track the user rolls + while loops)
+-design
+-button - to get a new player goal without having to reload the page every time
 -->
 <html>
     <head>
@@ -17,7 +21,10 @@ Dice Game V1
             <div class="container" id="title">
                 <h1>Dice Game</h1>
             </div>
-
+            
+            <div class="container" id="playerGoal">
+                <h2>Roll to <span id="winningRoll"></span></h2>
+            </div>
 
 
             <div class="container" id="diceRoll">
