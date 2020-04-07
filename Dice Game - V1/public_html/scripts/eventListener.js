@@ -1,12 +1,12 @@
-/* ANIMATION AND GAMEPLAY HANDLING */
+/* ANIMATION HANDLING */
 let button = document.getElementById("button");
 let newGame = document.getElementById("restartGame");
 const dice1 = document.querySelector(".dice1");
 const dice2 = document.querySelector(".dice2");
-
-//button listeners
-button.addEventListener("click", anim);
-//newGame.addEventListener("click", reload(true));
+let rollToWin;
+let win = document.getElementById("winningRoll");
+let winCt=document.getElementById("wins");
+let lossCt=document.getElementById("losses");
 
 /** anim()
  * Rolling dice animation, houses main gameplay loop
@@ -14,7 +14,7 @@ button.addEventListener("click", anim);
  */
 function anim()
 {
-    //randomizer for dice rolls
+    //randomizer for dice rolls 1-6
     let num1 = Math.floor(Math.random() * 6 + 1);
     let num2 = Math.floor(Math.random() * 6 + 1);
     //catch user trials
@@ -27,13 +27,11 @@ function anim()
         //loss
         alert("You lose!!!");
         lossCount++;
-        document.getElementById("newGameReload").style.display="block";
     } else if (userRoll === rollToWin)
     {
         //win
         alert("You win!!!");
         winCount++;
-        document.getElementById("newGameReload").style.display="block";
     } else if (rollCount > 0 && rollCount < userRollLimit)
     {
         document.getElementById("keepRolling").style.display = "block";
@@ -46,7 +44,7 @@ function anim()
 //    console.log(userRoll);
 //    console.log(rollToWin);
 
-    //display and animate
+    //display and animate using animate.css
     //dice 1
     dice1.classList.add('animated', 'flipOutX', 'faster');
     document.querySelector(".dice1").src = `images/dice-${num1}.gif`;
@@ -92,6 +90,52 @@ function winningRoll()
     return rollTo;
 }
 
-let rollToWin = winningRoll(); //how comp tracks the round goal for rolling
-let win = document.getElementById("winningRoll");
-win.innerText = rollToWin;
+/** displayGoal()
+ * Randomize the winning goal and display on page
+ * @returns {undefined}
+ */
+function displayGoal()
+{
+    rollToWin = winningRoll(); //how comp tracks the round goal for rolling
+    win.innerText = rollToWin;
+    document.getElementById("keepRolling").style.display = "none";
+}
+
+//bools for playing game or not
+let gamePlay = false;
+
+/** gameStart()
+ * start the game
+ * @returns {void}
+ */
+function gameStart()
+{
+    gamePlay === true;
+}
+
+/** restartGame()
+ * Restart game and reset values
+ * @returns {void}
+ */
+function restartGame()
+{
+    gamePlay = false;
+    rollCount = 0;
+    displayGoal();
+    document.querySelector(".dice1").src = `images/dice-1.gif`;
+    document.querySelector(".dice2").src = `images/dice-1.gif`;
+    
+    winCt.innerText=winCount;
+    lossCt.innerText=lossCount;
+}
+
+//buttons
+newGame.addEventListener("click", restartGame);
+button.addEventListener("click", gameStart);
+
+//main gameplay loop
+do
+{
+    button.addEventListener("click", anim);
+} while (gamePlay)
+
