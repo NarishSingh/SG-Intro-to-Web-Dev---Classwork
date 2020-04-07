@@ -2,7 +2,10 @@
 let button = document.getElementById("button");
 const dice1 = document.querySelector(".dice1");
 const dice2 = document.querySelector(".dice2");
+
 let userRoll;
+const userRollLimit = 10;
+let rollCount = 0;
 
 button.addEventListener("click", anim);
 
@@ -66,11 +69,6 @@ let rollToWin = winningRoll(); //how comp tracks the round goal for rolling
 let win = document.getElementById("winningRoll");
 win.innerText = rollToWin;
 
-//Rules
-//if = rollToWin, they win
-const userRollLimit = 10; //if past limit, they lose -> do an alert on loss
-let rollCount = 0;
-
 //main gameplay loop
 if (rollCount < userRollLimit && userRoll === rollToWin)
 {
@@ -80,15 +78,13 @@ if (rollCount < userRollLimit && userRoll === rollToWin)
 } 
 else if (rollCount < userRollLimit)
 {
-    
+    document.getElementById("keepRolling").style.display="block";
 }
 else
 {
     //loss
     alert("You lose!!!");
     lossCount++;
-
 }
-
 
 //display win/loss count --> HTML

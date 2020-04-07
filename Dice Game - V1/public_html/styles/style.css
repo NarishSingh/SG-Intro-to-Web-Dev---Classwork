@@ -25,3 +25,8 @@
     display: grid;
     justify-content: center;
 }
+
+h4
+{
+    justify-content: center;
+}
