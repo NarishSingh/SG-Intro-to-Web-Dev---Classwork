@@ -18,7 +18,10 @@ function anim()
     //randomizer for dice rolls
     let num1 = Math.floor(Math.random() * 6 + 1);
     let num2 = Math.floor(Math.random() * 6 + 1);
+    //catch user trials
     userRoll = num1 + num2;
+    console.log(userRoll);
+    console.log(rollToWin);
     rollCount++;
 
     //display and animate
@@ -70,21 +73,23 @@ let win = document.getElementById("winningRoll");
 win.innerText = rollToWin;
 
 //main gameplay loop
-if (rollCount < userRollLimit && userRoll === rollToWin)
-{
-    alert("You win!!!");
-    winCount++;
-
-} 
-else if (rollCount < userRollLimit)
-{
-    document.getElementById("keepRolling").style.display="block";
-}
-else
+if (rollCount>userRollLimit)
 {
     //loss
     alert("You lose!!!");
     lossCount++;
+//    break;
+}
+else if (userRoll === rollToWin)
+{
+    //win
+    alert("You win!!!");
+    winCount++;
+//    break;
+}
+else
+{
+    document.getElementById("keepRolling").style.display = "block";
 }
 
 //display win/loss count --> HTML
