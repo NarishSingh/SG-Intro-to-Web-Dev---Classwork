@@ -1,13 +1,12 @@
-/* ANIMATION AND GAMEPLAY HANDLING */
+/* ANIMATION HANDLING */
 let button = document.getElementById("button");
 let newGame = document.getElementById("restartGame");
 const dice1 = document.querySelector(".dice1");
 const dice2 = document.querySelector(".dice2");
 let rollToWin;
 let win = document.getElementById("winningRoll");
-
-//button listeners
-//button.addEventListener("click", anim);
+let winCt=document.getElementById("wins");
+let lossCt=document.getElementById("losses");
 
 /** anim()
  * Rolling dice animation, houses main gameplay loop
@@ -28,13 +27,11 @@ function anim()
         //loss
         alert("You lose!!!");
         lossCount++;
-//        document.getElementById("newGameReload").style.display = "block";
     } else if (userRoll === rollToWin)
     {
         //win
         alert("You win!!!");
         winCount++;
-//        document.getElementById("newGameReload").style.display = "block";
     } else if (rollCount > 0 && rollCount < userRollLimit)
     {
         document.getElementById("keepRolling").style.display = "block";
@@ -104,7 +101,7 @@ function displayGoal()
     document.getElementById("keepRolling").style.display = "none";
 }
 
-//gameplay loop
+//bools for playing game or not
 let gamePlay = false;
 
 /** gameStart()
@@ -125,11 +122,18 @@ function restartGame()
     gamePlay = false;
     rollCount = 0;
     displayGoal();
+    document.querySelector(".dice1").src = `images/dice-1.gif`;
+    document.querySelector(".dice2").src = `images/dice-1.gif`;
+    
+    winCt.innerText=winCount;
+    lossCt.innerText=lossCount;
 }
 
+//buttons
 newGame.addEventListener("click", restartGame);
 button.addEventListener("click", gameStart);
 
+//main gameplay loop
 do
 {
     button.addEventListener("click", anim);
