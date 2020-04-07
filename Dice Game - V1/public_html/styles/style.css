@@ -2,7 +2,9 @@
 {
     width: auto;
     height: fit-content;
-    background-color: grey;
+    background-color: #D1D7FF;
+    margin: 0 auto;
+    padding: 40px 50px;
 }
 
 #title
@@ -12,12 +14,22 @@
 
 #button
 {
-    margin:20px; /*look how to directly center it*/
+    margin: 0 auto; /*look how to directly center it*/
+    font-weight:bold;
+    
 }
 
 #diceRoll
 {
     padding: 40px 50px;
+}
+.container #diceRoll{
+    border: 5px solid black;
+    width: 300px;
+} 
+
+.dice1, .dice2{
+    margin: 0 auto;
 }
 
 .container

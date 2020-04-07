@@ -1,13 +1,12 @@
 /* ANIMATION HANDLING */
 let button = document.getElementById("button");
+let newGame = document.getElementById("restartGame");
 const dice1 = document.querySelector(".dice1");
 const dice2 = document.querySelector(".dice2");
 
-let userRoll;
-const userRollLimit = 10;
-let rollCount = 0;
-
+//button listeners
 button.addEventListener("click", anim);
+//newGame.addEventListener("click", reload(true));
 
 /** anim()
  * Rolling dice animation
@@ -20,9 +19,32 @@ function anim()
     let num2 = Math.floor(Math.random() * 6 + 1);
     //catch user trials
     userRoll = num1 + num2;
-    console.log(userRoll);
-    console.log(rollToWin);
     rollCount++;
+
+    //main gameplay decision tree
+    if (rollCount > userRollLimit)
+    {
+        //loss
+        alert("You lose!!!");
+        lossCount++;
+        document.getElementById("newGameReload").style.display="block";
+    } else if (userRoll === rollToWin)
+    {
+        //win
+        alert("You win!!!");
+        winCount++;
+        document.getElementById("newGameReload").style.display="block";
+    } else if (rollCount > 0 && rollCount < userRollLimit)
+    {
+        document.getElementById("keepRolling").style.display = "block";
+    } else
+    {
+
+    }
+
+    //debug
+//    console.log(userRoll);
+//    console.log(rollToWin);
 
     //display and animate
     //dice 1
@@ -45,8 +67,11 @@ function remAnim()
     dice2.classList.remove('animated', 'flipInX', 'faster');
 }
 
-/* GAMEPLAY */
+/* GAMEPLAY FUNCTIONS AND VARS */
 let gamePlay = false; //might not be needed...
+let userRoll;
+const userRollLimit = 10;
+let rollCount = 0;
 let winCount = 0;
 let lossCount = 0;
 
@@ -72,24 +97,5 @@ let rollToWin = winningRoll(); //how comp tracks the round goal for rolling
 let win = document.getElementById("winningRoll");
 win.innerText = rollToWin;
 
-//main gameplay loop
-if (rollCount>userRollLimit)
-{
-    //loss
-    alert("You lose!!!");
-    lossCount++;
-//    break;
-}
-else if (userRoll === rollToWin)
-{
-    //win
-    alert("You win!!!");
-    winCount++;
-//    break;
-}
-else
-{
-    document.getElementById("keepRolling").style.display = "block";
-}
 
 //display win/loss count --> HTML

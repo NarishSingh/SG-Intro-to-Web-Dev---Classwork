@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <!--
 Dice Game V1
--connections (doc.get) between the gameplay and page
--connections between stats and page
--gameplay itself (variables to track the user rolls + while loops)
--design
--button - to get a new player goal without having to reload the page every time
+-display wins and losses
+-FOR NEW GAME: right now, we will give instructions to reload the page in browser on win or loss
+tomorrow, if time permits, see if we can use a btn btn-danger that reloads the page
+can use reload(true) or document.location.href="" but both of these broke the game so far...do more research
+-loop idea: when hold roll, will autoroll a bunch of times? if not another idea
 -->
 <html>
     <head>
@@ -29,13 +29,19 @@ Dice Game V1
             <div class="container" id="diceRoll">
                 <img src="images/dice-1.gif" alt="Dice #1 - begins on 1" class="dice1">
                 <img src="images/dice-1.gif" alt="Dice #2 - begins on 1" class="dice2">
+                <div style="width:30px; border: solid 5px #D1D7FF;"></div>
                 <form action="" method="POST">
-                    <input type="button" id="button" value="Roll!">
+                    <input type="button" id="button" value="Roll!" class="btn btn-outline-primary">
+                    <input type="reset" id="restartGame" value="New Round" class="btn btn-outline-danger">
                 </form>
             </div>
             
             <div class="container">
                 <h4 id="keepRolling" style="display: none;">Keep Rolling...</h4>
+            </div>
+            
+            <div class="container">
+                <h4 id="newGameReload" style="display: none;">Reload the page for a new game!!!</h4>
             </div>
             
             <!--display win/loss count-->
