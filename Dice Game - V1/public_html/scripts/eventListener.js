@@ -2,6 +2,7 @@
 let button = document.getElementById("button");
 const dice1 = document.querySelector(".dice1");
 const dice2 = document.querySelector(".dice2");
+let userRoll;
 
 button.addEventListener("click", anim);
 
@@ -14,6 +15,7 @@ function anim()
     //randomizer for dice rolls
     let num1 = Math.floor(Math.random()*6+1);
     let num2 = Math.floor(Math.random()*6+1);
+    userRoll=num1+num2;
     
     //display and animate
     //dice 1
@@ -39,7 +41,7 @@ function remAnim()
 /* GAMEPLAY */
 let gamePlay=false; //might not be needed...
 let winCount=0;
-let lossCount=0; //might not need
+let lossCount=0;
 
 //Display the player's goal
 /** winningRoll()
@@ -63,20 +65,30 @@ let rollToWin=winningRoll(); //how comp tracks the round goal for rolling
 let win=document.getElementById("winningRoll");
 win.innerText=rollToWin;
 
-let userRoll;
+//Rules
+//if = rollToWin, they win
+const userRollLimit=10; //if past limit, they lose -> do an alert on loss
+let rollCount=0;
 
 //loop gets triggered by a button???
-/*
-while(userRoll != rollToWin)
+//main gameplay loop
+while(userRoll !== rollToWin)
 {
+    rollCount++;
     
-    
-    
+    //win
     if(userRoll === rollToWin)
     {
 //        You win
         winCount++;
         break;
     }
+    
+    //loss
+    if(rollCount>userRollLimit)
+    {
+//        you lose
+        lossCount++;
+        break;
+    }
 }
- * */
