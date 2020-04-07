@@ -3,10 +3,11 @@ let button = document.getElementById("button");
 let newGame = document.getElementById("restartGame");
 const dice1 = document.querySelector(".dice1");
 const dice2 = document.querySelector(".dice2");
+let rollToWin;
+let win = document.getElementById("winningRoll");
 
 //button listeners
-button.addEventListener("click", anim);
-//newGame.addEventListener("click", reload(true));
+//button.addEventListener("click", anim);
 
 /** anim()
  * Rolling dice animation, houses main gameplay loop
@@ -14,7 +15,7 @@ button.addEventListener("click", anim);
  */
 function anim()
 {
-    //randomizer for dice rolls
+    //randomizer for dice rolls 1-6
     let num1 = Math.floor(Math.random() * 6 + 1);
     let num2 = Math.floor(Math.random() * 6 + 1);
     //catch user trials
@@ -27,13 +28,13 @@ function anim()
         //loss
         alert("You lose!!!");
         lossCount++;
-        document.getElementById("newGameReload").style.display="block";
+//        document.getElementById("newGameReload").style.display = "block";
     } else if (userRoll === rollToWin)
     {
         //win
         alert("You win!!!");
         winCount++;
-        document.getElementById("newGameReload").style.display="block";
+//        document.getElementById("newGameReload").style.display = "block";
     } else if (rollCount > 0 && rollCount < userRollLimit)
     {
         document.getElementById("keepRolling").style.display = "block";
@@ -46,7 +47,7 @@ function anim()
 //    console.log(userRoll);
 //    console.log(rollToWin);
 
-    //display and animate
+    //display and animate using animate.css
     //dice 1
     dice1.classList.add('animated', 'flipOutX', 'faster');
     document.querySelector(".dice1").src = `images/dice-${num1}.gif`;
@@ -92,6 +93,42 @@ function winningRoll()
     return rollTo;
 }
 
-let rollToWin = winningRoll(); //how comp tracks the round goal for rolling
-let win = document.getElementById("winningRoll");
-win.innerText = rollToWin;
+function displayGoal()
+{
+    rollToWin = winningRoll(); //how comp tracks the round goal for rolling
+    win.innerText = rollToWin;
+    document.getElementById("keepRolling").style.display = "none";
+}
+
+//gameplay loop
+let gamePlay = false;
+
+/** gameStart()
+ * start the game
+ * @returns {void}
+ */
+function gameStart()
+{
+    gamePlay === true;
+}
+
+button.addEventListener("click", gameStart);
+//newGame.addEventListener("click", reload(true));
+//newGame.addEventListener("click", document.location.href=""));
+
+do
+{
+    displayGoal();
+    button.addEventListener("click", anim);
+} while (gamePlay)
+
+function restartGame()
+{
+    gamePlay = false;
+    rollCount = 0;
+    rollToWin = winningRoll();
+    console.log(rollToWin); //debug
+    displayGoal();
+}
+
+newGame.addEventListener("click", restartGame);
