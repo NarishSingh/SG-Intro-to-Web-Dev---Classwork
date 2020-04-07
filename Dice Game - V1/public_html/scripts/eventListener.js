@@ -112,9 +112,21 @@ function gameStart()
     gamePlay === true;
 }
 
+/** restartGame()
+ * Restart game and reset values
+ * @returns {void}
+ */
+function restartGame()
+{
+    gamePlay = false;
+    rollCount = 0;
+    console.log(rollToWin); //debug
+    displayGoal();
+}
+
+newGame.addEventListener("click", restartGame);
 button.addEventListener("click", gameStart);
-//newGame.addEventListener("click", reload(true));
-//newGame.addEventListener("click", document.location.href=""));
+
 
 do
 {
@@ -122,13 +134,3 @@ do
     button.addEventListener("click", anim);
 } while (gamePlay)
 
-function restartGame()
-{
-    gamePlay = false;
-    rollCount = 0;
-    rollToWin = winningRoll();
-    console.log(rollToWin); //debug
-    displayGoal();
-}
-
-newGame.addEventListener("click", restartGame);
