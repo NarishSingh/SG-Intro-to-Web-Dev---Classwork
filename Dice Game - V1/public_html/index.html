@@ -8,10 +8,6 @@ Last Modified: 4/7/20
 
 to do list
 -display wins and losses
--FOR NEW GAME: right now, we will give instructions to reload the page in browser on win or loss
-tomorrow, if time permits, see if we can use a btn btn-danger that reloads the page
-can use reload(true) or document.location.href="" but both of these broke the game so far...do more research
--loop idea: when hold roll, will autoroll a bunch of times? if not another idea
 -->
 <html>
     <head>
@@ -38,7 +34,7 @@ can use reload(true) or document.location.href="" but both of these broke the ga
                 <div style="width:30px; border: solid 5px #D1D7FF;"></div>
                 <form action="" method="POST">
                     <input type="button" id="button" value="Roll!" class="btn btn-outline-primary">
-                    <input type="reset" id="restartGame" value="New Round" class="btn btn-outline-danger">
+                    <input type="reset" id="restartGame" value="New Game" class="btn btn-outline-danger">
                 </form>
             </div>
             
@@ -46,9 +42,13 @@ can use reload(true) or document.location.href="" but both of these broke the ga
                 <h4 id="keepRolling" style="display: none;">Keep Rolling...</h4>
             </div>
             
-            <div class="container">
-                <h4 id="newGameReload" style="display: none;">Reload the page for a new game!!!</h4>
+            <div class="container" id="winLossCount">
+                <h3 id="WLCt">Win: <span id="wins"></span> | Loss: <span id="losses"></span></h3>
             </div>
+            
+<!--            <div class="container">
+                <h4 id="newGameReload" style="display: none;">Reload the page for a new game!!!</h4>
+            </div>-->
             
             <!--TODO display win/loss count-->
         </div>
