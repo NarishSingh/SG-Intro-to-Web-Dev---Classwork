@@ -1,4 +1,4 @@
-/* ANIMATION HANDLING */
+/* ANIMATION AND GAMEPLAY HANDLING */
 let button = document.getElementById("button");
 let newGame = document.getElementById("restartGame");
 const dice1 = document.querySelector(".dice1");
@@ -9,7 +9,7 @@ button.addEventListener("click", anim);
 //newGame.addEventListener("click", reload(true));
 
 /** anim()
- * Rolling dice animation
+ * Rolling dice animation, houses main gameplay loop
  * @returns {void}
  */
 function anim()
@@ -39,7 +39,7 @@ function anim()
         document.getElementById("keepRolling").style.display = "block";
     } else
     {
-
+        //dummy block
     }
 
     //debug
@@ -68,7 +68,6 @@ function remAnim()
 }
 
 /* GAMEPLAY FUNCTIONS AND VARS */
-let gamePlay = false; //might not be needed...
 let userRoll;
 const userRollLimit = 10;
 let rollCount = 0;
@@ -96,6 +95,3 @@ function winningRoll()
 let rollToWin = winningRoll(); //how comp tracks the round goal for rolling
 let win = document.getElementById("winningRoll");
 win.innerText = rollToWin;
-
-
-//display win/loss count --> HTML
