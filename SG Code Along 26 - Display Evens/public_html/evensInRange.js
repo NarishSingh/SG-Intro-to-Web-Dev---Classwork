@@ -73,7 +73,18 @@ function calculate()
     var start = parseInt(document.getElementById("num1").value);
     var end = parseInt(document.getElementById("num2").value);
     var step = parseInt(document.getElementById("step").value);
-
+    
+    //impossible increment
+    if(step>end || step<0)
+    {
+        alert("Impossible increment!!!");
+    }
+    
+    if(end<=start)
+    {
+        alert("Ending number must be less than starting number");
+    }
+    
     document.getElementById("resultsText").innerHTML = "Here are the even numbers between " + start + " and " + end + " by " + step + " 's:";
     let ans = "";
     for (var i = start; i <= end; i = step + i)
@@ -84,7 +95,7 @@ function calculate()
             ans = ans + i + "<br>";
         }
     }
-    console.log(ans);
+//    console.log(ans);
     document.getElementById("answer").innerHTML = ans;
 
     //calculate
