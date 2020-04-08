@@ -78,11 +78,18 @@ function calculate()
     if(step>end || step<0)
     {
         alert("Impossible increment!!!");
+        return;
     }
-    
+    //Impossible Range
     if(end<=start)
     {
         alert("Ending number must be more than starting number");
+        return;
+    }
+    if(start%2!==0 && step===2)
+    {
+        alert("Only odds in output, nothing to show");
+        return;
     }
     
     document.getElementById("resultsText").innerHTML = "Here are the even numbers between " + start + " and " + end + " by " + step + " 's:";
