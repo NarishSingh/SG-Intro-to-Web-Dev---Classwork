@@ -40,47 +40,63 @@
  }
  */
 
-
-//get and cast user inputs to numbers
-var start = Number(document.getElementById("num1").value);
-var end = Number(document.getElementById("num2").value);
-var step = Number(document.getElementById("step").value);
-
 /** evensInStep()
  * Push all possible step values in range in an array, then find even step values in range
  * @returns {Array} within range, all even and incremented values
  */
-function evensInStep()
-{
-    var stepValues = new Array();
-    var evenStepValues = new Array();
-
-    for (var i = start; i <= end; i += step)
-    {
-        stepValues.push(i);
-    }
-
-    for (var i = start; i <= end; i++)
-    {
-        if (i % 2 === 0 && i === stepValues[i])
-        {
-            evenStepValues.push(i);
-        }
-    }
-
-    return evenStepValues;
-}
+/*
+ function evensInStep()
+ {
+ var stepValues = new Array();
+ var evenStepValues = new Array();
+ 
+ for (var i = start; i <= end; i += step)
+ {
+ stepValues.push(i);
+ }
+ 
+ for (var i = start; i <= end; i++)
+ {
+ if (i % 2 === 0 && i === stepValues[i])
+ {
+ evenStepValues.push(i);
+ }
+ }
+ 
+ return evenStepValues;
+ }
+ */
 
 function calculate()
 {
-    //calculate
-    resultsArray = evensInStep();
-    console.log(resultsArray);
-    
-    for (var i = 0; i < resultsArray.length; i++)
+    //get and cast user inputs to numbers
+    var start = parseInt(document.getElementById("num1").value);
+    var end = parseInt(document.getElementById("num2").value);
+    var step = parseInt(document.getElementById("step").value);
+
+    document.getElementById("resultsText").innerHTML = "Here are the even numbers between " + start + " and " + end + " by " + step + " 's:";
+    let ans = "";
+    for (var i = start; i <= end; i = step + i)
     {
-        document.getElementById("resultsArray").innerText=resultsArray[i];
+        //concentate strings to add the answer
+        if (i % 2 === 0)
+        {
+            ans = ans + i + "<br>";
+        }
     }
+    console.log(ans);
+    document.getElementById("answer").innerHTML = ans;
+
+    //calculate
+    /*
+     resultsArray = evensInStep();
+     console.log(resultsArray);
+     
+     for (var i = 0; i < resultsArray.length; i++)
+     {
+     document.getElementById("resultsArray").innerText = resultsArray[i];
+     }
+     */
 
     //display results
     document.getElementById("results").style.display = "block";
