@@ -82,7 +82,7 @@ function calculate()
     
     if(end<=start)
     {
-        alert("Ending number must be less than starting number");
+        alert("Ending number must be more than starting number");
     }
     
     document.getElementById("resultsText").innerHTML = "Here are the even numbers between " + start + " and " + end + " by " + step + " 's:";
