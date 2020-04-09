@@ -11,7 +11,7 @@ Menu
         <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Roboto+Slab&display=swap" rel="stylesheet">        
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid" data-spy="scroll" data-target="#menuNav" data-offset="0">
             <header>
                 <h1>Singh's Bush Cook - Bar &AMP; Restaurant</h1>
                 <h3>Serving countryside Indo-Guyanese cuisine and fusion dishes since 2020</h3>
@@ -25,11 +25,49 @@ Menu
                 <a class="btn badge-pill" href="contact.html">Contact Us</a>
             </nav>
 
-            <article id="page-title">
+            <!--Stick Navbar w Scrollspy-->
+            <nav id="menuNav" class="navbar sticky-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="">Singh's Menu</a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#comboReccs">Try These!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#breakfast">Breakfast</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#snacks">Snacks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#curries">Meat/Veg</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#main-course">Main Course</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#roti">Roti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sides">Sides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#additives">Add-ons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sweets">Desserts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#drinks">Drinks</a>
+                    </li>
+                </ul>
+            </nav>
+
+<!--            <article id="page-title">
                 <h2>Menu</h2>
-            </article>
+            </article>-->
 
             <article id="comboReccs">
+                <br/><br/><br/>
                 <h3>Meal Recommendations</h3>
 
                 <!--Carousel-->
@@ -40,6 +78,7 @@ Menu
                         <li data-target="#foodCarousel" data-slide-to="1"></li>
                         <li data-target="#foodCarousel" data-slide-to="2"></li>
                         <li data-target="#foodCarousel" data-slide-to="3"></li>
+                        <li data-target="#foodCarousel" data-slide-to="4"></li>
                     </ol>
 
                     <!--pics with captions-->
@@ -82,7 +121,7 @@ Menu
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-75 float center" src="images/mauby.jpg" alt="5th Slide">
+                            <img class="d-block w-75 float center" src="images/mauby2.jpg" alt="5th Slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <div class="innerContainer">
                                     <h5>Mauby</h5>
@@ -177,6 +216,7 @@ Menu
             <br/>
 
             <article id="breakfast">
+                <br/><br/><br/>
                 <h3>Breakfast</h3>
                 <p>Start your day off at the <span><strong>Bush Cook</strong></span></p>
                 <p>Egg dishes are available on a bagel or toast (whole wheat or regular), and you can add pork or turkey sausage/bacon</p>
@@ -201,6 +241,7 @@ Menu
             </article>
 
             <article id="snacks">
+                <br/><br/><br/>
                 <h3>Snacks</h3>
                 <p>A variety of savory snacks, great for breakfast, dessert, or a midday break.</p> 
                 <p>Pairs well with <a class="links" href="#drinks">tea, or a homemade juice/soda</a></p>
@@ -223,6 +264,7 @@ Menu
             </article>
 
             <article id="curries">
+                <br/><br/><br/>
                 <h3>Meats and Vegetables</h3>
                 <p><strong>Curries, Stew/Cassareep, Fried, Baked, Roasted/BBQ, etc</strong></p>
                 <p>In this establishment we say Chicken Curry, but feel free to order your "curry chicken" too</p>
@@ -252,6 +294,7 @@ Menu
             </article>
 
             <article id="main-course">
+                <br/><br/><br/>
                 <h3>Main Course Dishes</h3>
                 <p>Traditional and fusion dishes, all with a personal touch</p>
                 <p>Most main courses come with a <a class="links" href="#curries">meat choice</a>. Try adding a <a class="links" href="#snacks">fried plantain</a> on the side also!</p>
@@ -271,6 +314,7 @@ Menu
             </article>
 
             <article id="roti">
+                <br/><br/><br/>
                 <h3>Rotis</h3>
                 <p>Flatbreads, which along with rice serve as the main base for any lunch or dinner.</p>
                 <p>Pro-tip: eat with your hands</p>
@@ -284,6 +328,7 @@ Menu
             </article>
 
             <article id="sides">
+                <br/><br/><br/>
                 <h3>Sides</h3>
                 <p>Curry and rice or roti is great...but complete your <a class="links" href="#curries">main course</a> with some sides</p>
                 <ol style="list-style-type: square;">
@@ -307,6 +352,7 @@ Menu
             </article>
 
             <article id="additives">
+                <br/><br/><br/>
                 <h3>Add-ons</h3>
                 <p>Want some more spice? Or to add some layers to your <a class="links" href="#curries">main course</a>?</p>
                 <ol style="list-style-type: square;">
@@ -320,6 +366,7 @@ Menu
             </article>
 
             <article id="sweets">
+                <br/><br/><br/>
                 <h3>Sweets/Desserts</h3>
                 <p>Treat yourself to some of our sweets and baked goods</p>
                 <ol style="list-style-type: square;">
@@ -347,6 +394,7 @@ Menu
             </article>
 
             <article id="drinks">
+                <br/><br/><br/>
                 <h3>Drinks</h3>
                 <p>Quench your thirst with a variety of home made and regional brand drinks</p>
                 <ol>
@@ -394,8 +442,8 @@ Menu
 
             <footer>
                 <hr />
-                <p>999-99 Liberty Ave, South Richmond Hill, Queens, NY 99999 &#124; 555-555-5555</p>
-                <p>&copy; 2020 Narish Singh. All rights reserved. Disclaimer: this is a fictional establishment</p>
+                999-99 Liberty Ave, South Richmond Hill, Queens, NY 99999 &#124; 555-555-5555<br/>
+                &copy; 2020 Narish Singh. All rights reserved. Disclaimer: this is a fictional establishment
             </footer>
         </div>
 
