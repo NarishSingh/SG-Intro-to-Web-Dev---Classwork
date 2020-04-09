@@ -20,19 +20,19 @@ SG Project 3 - Lucky Sevens
                 <input id="buyin" type="number" placeholder="$0.00">
 
                 <div class="input-group-append">
-                    <button class="btn btn-outline-primary" onclick="play()" type="button">Play</button>
+                    <button class="btn btn-outline-danger" onclick="play()">Play</button>
                 </div>
             </div>
             
             <hr/>
             <!--Game Results-->
-            <div> <!--do the display none thing-->
+            <div id="results" style="display: none;"> <!--do the display none thing-->
                 <h3>"You gotta know when to hold..."</h3>
                 <table id="resultsTable" class="table table-striped table-dark">
                     <caption>Your results by the end of the night...</caption>
                     <tbody>
                         <tr>
-                            <td>Starting Bet:</td> <td><span id="buyinDisplay"></span></td>
+                            <td>Starting Bet</td> <td><span id="buyinDisplay"></span></td>
                         </tr>
                         <tr>
                             <td>Total Rolls Before Going Broke</td> <td><span id="totalRolls"></span></td>

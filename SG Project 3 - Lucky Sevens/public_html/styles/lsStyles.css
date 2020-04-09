@@ -1,13 +1,17 @@
-/*
-
-*/
-/* 
-    Created on : Apr 8, 2020, 7:04:04 PM
-    Author     : naris
-*/
+.container
+{
+    width: 100%;
+    background-color: rgba(119,136,153,.25);
+    font-family: georgia;
+}
 
 table
 {
     width: 75%;
     margin: 0 auto;
+}
+
+table caption
+{
+    text-align: center;
 }

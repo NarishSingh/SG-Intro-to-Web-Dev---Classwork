@@ -3,13 +3,13 @@
  * hit 7 = win $4
  * no 7 = lose $1
  */
-const WIN_AMOUNT = 4.00;
-const LOSS_AMOUNT = 1.00;
-var peakEarn = {
-    amount = 0,
-    turn = 0
-};
+/*GLOBAL VARIABLES*/
+const WIN_AMOUNT = 4;
+const LOSS_AMOUNT = 1;
+var peakEarnAmount;
+var peakEarnTurn;
 
+/*GAMEPLAY FUNCTIONS*/
 /** roll()
  * Roll 2 Dice
  * @returns {Number|Int} 2-12 
@@ -31,14 +31,12 @@ function roll()
  */
 function biggestBank(nextEarn, currentTurn)
 {
-    if (nextEarn > peakEarn.amount)
+    if (nextEarn > peakEarnAmount)
     {
-        peakEarn.amount = nextEarn;
-        peakEarn.turn = currentTurn;
+        peakEarnAmount = nextEarn;
+        peakEarnTurn = currentTurn;
     }
 }
-
-/*HIGHEST EARNING WITH ROLL COUNT*/
 
 /*-----------------------------------------------*/
 /** play()
@@ -58,8 +56,10 @@ function play()
 
     /*GAMEPLAY LOOP*/
     var bank = bet;
-    var bigBank;
     var rollCt = 0;
+    peakEarnAmount=0;
+    peakEarnAmount=0;
+    
     while (bank > 0)
     {
         //roll
@@ -75,12 +75,15 @@ function play()
             bank -= LOSS_AMOUNT;
         }
 
+        console.log("roll #" + rollCt + ": " + round + " | bank: $" + bank); //debug
+
         //track best earning
         biggestBank(bank, rollCt);
     }
 
     /*RESULTS SHOW*/
-    document.getElementById("totalRolls").innerText = rollCt; //display total rolls
-    document.getElementById("highestEarning").innerText=peakEarn.amount;
-    document.getElementById("highestEarningRollCount").innerText=peakEarn.turn;
+    document.getElementById("totalRolls").innerText = rollCt;
+    document.getElementById("highestEarning").innerText = peakEarnAmount;
+    document.getElementById("highestEarningRollCount").innerText = peakEarnTurn;
+    document.getElementById("results").style.display = "block";
 }
