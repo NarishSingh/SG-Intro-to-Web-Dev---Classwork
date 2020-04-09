@@ -3,6 +3,7 @@
  * hit 7 = win $4
  * no 7 = lose $1
  */
+
 /*GLOBAL VARIABLES*/
 const WIN_AMOUNT = 4;
 const LOSS_AMOUNT = 1;
@@ -24,7 +25,7 @@ function roll()
 }
 
 /** biggestBank(nextEarn)
- * Track the biggest bank for player
+ * Set stats for highest earning for player
  * @param {Number|Float} nextEarn - total earnings every roll
  * @param {Number|Int} currentTurn - roll count 
  * @returns {void}
@@ -38,7 +39,7 @@ function biggestBank(nextEarn, currentTurn)
     }
 }
 
-/*-----------------------------------------------*/
+/*----------------------------------------------------------------------------*/
 /** play()
  * Main gameplay loop
  * @returns {void}
@@ -75,9 +76,8 @@ function play()
             bank -= LOSS_AMOUNT;
         }
 
-        console.log("roll #" + rollCt + ": " + round + " | bank: $" + bank); //debug
+//        console.log("roll #" + rollCt + ": " + round + " | bank: $" + bank); //debug
 
-        //track best earning
         biggestBank(bank, rollCt);
     }
 
@@ -85,5 +85,6 @@ function play()
     document.getElementById("totalRolls").innerText = rollCt;
     document.getElementById("highestEarning").innerText = peakEarnAmount;
     document.getElementById("highestEarningRollCount").innerText = peakEarnTurn;
+    
     document.getElementById("results").style.display = "block";
 }
