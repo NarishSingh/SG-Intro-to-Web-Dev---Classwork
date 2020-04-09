@@ -25,7 +25,7 @@ function roll()
 }
 
 /** biggestBank(nextEarn)
- * Set stats for highest earning for player
+ * Set stats of the highest earning for player
  * @param {Number|Float} nextEarn - total earnings every roll
  * @param {Number|Int} currentTurn - roll count 
  * @returns {void}
@@ -41,17 +41,17 @@ function biggestBank(nextEarn, currentTurn)
 
 /*----------------------------------------------------------------------------*/
 /** play()
- * Main gameplay loop
+ * Main gameplay loop, called on click of play button
  * @returns {void}
  */
 function play()
 {
     /*STARTING BET DISPLAY*/
     var bet = Number(document.getElementById("buyin").value);
-    if (bet < 0.01 || isNaN(bet))
+    if (bet < 0.01)
     {
         alert("Please enter valid bet amount");
-        return;
+        return; //error handling
     }
     document.getElementById("buyinDisplay").innerText = "$" + bet;
 
@@ -59,16 +59,16 @@ function play()
     var bank = bet;
     var rollCt = 0;
     peakEarnAmount=0;
-    peakEarnAmount=0;
+    peakEarnTurn=0;
     
     while (bank > 0)
     {
         //roll
-        var round = roll();
+        var roundRoll = roll();
         rollCt++;
 
         //w/l
-        if (round === 7)
+        if (roundRoll === 7)
         {
             bank += WIN_AMOUNT;
         } else
@@ -76,9 +76,11 @@ function play()
             bank -= LOSS_AMOUNT;
         }
 
-//        console.log("roll #" + rollCt + ": " + round + " | bank: $" + bank); //debug
-
-        biggestBank(bank, rollCt);
+        biggestBank(bank, rollCt); //monitor highest earning
+        
+        //debug tools
+//        console.log("roll #" + rollCt + ": " + roundRoll + " | bank: $" + bank); 
+//        console.log("Highest earning = " + peakEarnAmount + " at turn #" + peakEarnTurn);
     }
 
     /*RESULTS SHOW*/
