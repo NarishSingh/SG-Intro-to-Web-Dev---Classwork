@@ -88,6 +88,29 @@ nav .btn:hover
     text-decoration: none;
 }
 
+.navbar-brand
+{
+    font-family: 'Roboto Slab', serif;
+    text-decoration: underline;
+}
+
+.nav-link
+{
+    font-family: 'Roboto Slab', serif;
+    color: red;
+}
+
+.nav-link:hover
+{
+    color: goldenrod;
+}
+
+.nav-link:active
+{
+    color: whitesmoke;
+}
+
+
 /*Images*/
 div img
 {
