@@ -37,7 +37,7 @@ function validateName()
         return false;
     } else 
     {
-        return true;
+        return false;
     }
 }
 
@@ -55,7 +55,7 @@ function validateEmail()
         return false;
     } else 
     {
-        return true;
+        return false;
     }
 }
 
@@ -73,6 +73,6 @@ function validatedPhone()
         return false;
     } else 
     {
-        return true;
+        return false;
     }
 }
