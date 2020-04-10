@@ -48,6 +48,6 @@ function resetView()
 {
     numberFun.className="needs-validation";
     results.style.display="none";
-    submitButton.innerText="Calculate"
+    submitButton.innerText="Calculate";
     num1.focus();
 }
