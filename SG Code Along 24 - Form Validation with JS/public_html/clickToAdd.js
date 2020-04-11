@@ -2,7 +2,7 @@
  * functions for form validation/reset and the calculations
  */
 
-//define vars --> gran form and elements by name
+//define vars --> grab form and elements by name
 var numberFun=document.forms["numberFun"];
 var num1=document.getElementById("num1");
 var num2=document.getElementById("num2");
